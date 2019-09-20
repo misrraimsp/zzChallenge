@@ -1,7 +1,3 @@
-
-
-//https://codility.com/cert/view/certJB6PQA-QCAN37JEA9JSVF7N/details/
-
 import java.util.TreeSet;
 
 class Solution {
@@ -27,7 +23,7 @@ class Solution {
 		for (int j = 0; j < N; j++){
 			// initial set up
 			if (j == 0){
-				Element next = new Element(rightTree.last());
+				Element next = new Element(rightTree.last()); //this is the highest element
 				next.setC(1);
 				next.setA(1);
 				rightTree.remove(next);
