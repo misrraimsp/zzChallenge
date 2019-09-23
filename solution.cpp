@@ -127,9 +127,9 @@ int solution(vector<int> &H) {
     sol++;
     return (int)(sol % 1000000007);
 }
-
+/*
 int main(int argc, char* argv[]) {
     vector<int> H = { 13, 2, 5 };
     cout << "sol: " << solution(H) << endl;
     system("pause");
-}
+}*/

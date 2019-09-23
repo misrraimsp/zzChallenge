@@ -2,24 +2,20 @@ import java.util.TreeSet;
 
 class Solution {
     public int solution(int[] A) {
+    	//initial checks
         if (A == null) return -1;
-		
 		int N = A.length;
+		if (N == 0 || N == 1) return N;
+		
+		//data setup
 		long sol = 0;
-		
-		if (N == 0) return (int)sol;
-		
-		//Element[] E = new Element[N];
 		TreeSet<Element> rightTree = new TreeSet<Element>();
 		TreeSet<Element> leftTree = new TreeSet<Element>();
-		
-		
 		for (int i = 0; i < N; i++){ // time-complexity O(NlogN)
-			//E[i] = new Element(A[i]);
 			rightTree.add(new Element(A[i]));
 		}
 		
-		
+		//main loop
 		for (int j = 0; j < N; j++){
 			// initial set up
 			if (j == 0){
@@ -148,25 +144,11 @@ class Element implements Comparable<Element> {
 		}
 	}
 	
-	public long getH(){
-		return height;
-	}
-	
-	public long getA(){
-		return acc;
-	}
-	
-	public long getC(){
-		return con;
-	}
-	
-	public void setA(long a){
-		acc = a;
-	}
-	
-	public void setC(long c){
-		con = c;
-	}
+	public long getH(){ return height; }
+	public long getA(){ return acc; }
+	public long getC(){ return con; }
+	public void setA(long a){ acc = a; }
+	public void setC(long c){ con = c; }
 	
 	public int compareTo(Element e) {
 		if (height < e.getH()) return -1;
@@ -174,8 +156,6 @@ class Element implements Comparable<Element> {
 		return 0;
 	}
 	
-	public boolean equals(Element e){
-		return height == e.getH();
-	}
+	public boolean equals(Element e){ return height == e.getH(); }
 
 }
